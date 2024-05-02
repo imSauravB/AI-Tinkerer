@@ -1,0 +1,10 @@
+services:
+  mycontainer:
+    image: mlflow-server-sqlite:latest
+    container_name: mlflow-sqlite
+    build: .
+    volumes:
+      - '/Users/sauravbehera/workspace/ML/mlflow/sharedMlflowDir/mlruns:/mlruns'
+      - '/Users/sauravbehera/workspace/ML/mlflow/sharedMlflowDir/mlartifacts:/mlartifacts'
+    ports:
+      - "5001:5001"
